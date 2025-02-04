@@ -1,21 +1,27 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller {
+public class Seller implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
 	private Double baseSalary;
 	
-	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary) {
+	private Department department;
+	
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
 		this.baseSalary = baseSalary;
+		this.department = department;
 	}
 
 	public Integer getId() {
@@ -78,7 +84,7 @@ public class Seller {
 	}
 
 	public String toString() {
-		return String.format("%d%n%s%n%s%n%s%n%.2f", id, name, email, birthDate, baseSalary);
+		return String.format("%d%n%s%n%s%n%s%n%.2f%n[%d, %s]", id, name, email, birthDate, baseSalary, department.getId(), department.getName());
 	}
 	
 }
