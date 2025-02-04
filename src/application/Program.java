@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 
 import entities.Department;
@@ -22,11 +23,14 @@ public class Program {
 		List<Seller> list = sellerDao.findByDepartment(department);
 		list.forEach(System.out::println);
 		
-		System.out.println("=== TEST 2: seller findAll ===");
+		System.out.println("=== TEST 3: seller findAll ===");
 		list = sellerDao.findAll();
 		list.forEach(System.out::println);
 		
-		
+		System.out.println("=== TEST 4: seller insert ===");
+		Seller newSeller = new Seller(null, "Junior", "junin@gmail.com", new Date(), 5000.0, department);
+		sellerDao.insert(newSeller);
+		System.out.println("Inserted! New id = " + newSeller.getId());
 	}
 
 }
