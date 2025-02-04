@@ -96,7 +96,8 @@ public class Seller implements Serializable{
 	}
 
 	public String toString() {
-		return String.format("%d%n%s%n%s%n%s%n%.2f%n[%d, %s]", id, name, email, birthDate, baseSalary, department.getId(), department.getName());
+		return String.format("[Id = %d, name=%s, email=%s, birthDate=%s, baseSalary=%.2f, %s]", 
+				id, name, email, birthDate, baseSalary, department.toString());
 	}
 	
 }

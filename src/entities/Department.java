@@ -52,6 +52,6 @@ public class Department implements Serializable{
 	}
 	
 	public String toString() {
-		return String.format("%d%n%s", id, name);
+		return String.format("[id=%d, name=%s]", id, name);
 	}
 }
